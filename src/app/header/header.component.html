@@ -1,0 +1,17 @@
+<nav>
+  <h3>SmartBuy</h3>
+  <input type="text" id="search-input" placeholder="Search" (click)="onSearch()">
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="product">Products</a></li>
+  <ng-container *ngIf="(authService.isAuthenticated() | async); else showLogin">
+    <li>
+      <app-profile></app-profile>
+    </li>
+    <li>
+      <button class="logout-button" (click)="onLogout()">Logout</button>
+    </li>
+  </ng-container>
+  <ng-template #showLogin>
+    <li><a routerLink="login">Login</a></li>
+  </ng-template>
+</nav>

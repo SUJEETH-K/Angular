@@ -1,0 +1,21 @@
+<div class="hero">
+    <div class="hero-content">
+        <h2>Product: {{ productName }}</h2>
+        <h5>Complete Your Purchase</h5>
+        <p class="product-description">
+            This is a brief description of the product. It highlights the main features and benefits to give the
+            customer a clear understanding of what they are buying.
+        </p>
+        <p class="product-price">Price: ₹{{ productPrice }}</p>
+        <p class="product-rating" >Rating: {{ productRating }} / 5</p>
+        <button class="cta-btn">Buy Now</button>
+    </div>
+    <div class="hero-image">
+        <img [src]="productImage" alt="Product Image">
+    </div>
+</div>
+
+
+<footer>
+    <p>&copy; 2024 Your Company. All rights reserved.</p>
+</footer>

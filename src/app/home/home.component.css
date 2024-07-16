@@ -1,0 +1,83 @@
+.home-container {
+    font-family: Arial, sans-serif;
+}
+
+.hero-section {
+    background-image: url('data: image/jpeg;base64,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');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 36px ;
+}
+.hero-content{
+    padding-bottom: 33px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.shop-now-button {
+    background-color: #8b3dff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.shop-now-button:hover {
+    background-color: #7528d9;
+}
+
+.features-section {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.feature p {
+    font-size: 16px;
+    color:black;
+}
+
+footer {
+    background-color: #d3bcf7;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}

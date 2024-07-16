@@ -1,0 +1,13 @@
+<div class="profile-container">
+    <div class="profile-circle" (click)="toggleDropdown()">
+        {{ userInitial }}
+    </div>
+    <div class="dropdown-menu" *ngIf="dropdownOpen">
+        <ul>
+            <li (click)="navigateTo('userDet')">Your Profile</li>
+            <!-- <li (click)="navigateTo('cart')">Your Cart</li> -->
+            <!-- <li (click)="navigateTo('orders')">Your Orders</li> -->
+            <!-- <li (click)="onLogout()">Logout</li> -->
+        </ul>
+    </div>
+</div>
