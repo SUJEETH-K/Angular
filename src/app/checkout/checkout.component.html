@@ -1,0 +1,34 @@
+<div class="wrapper">
+<div class="checkout-container">
+    <h2>Checkout</h2>
+
+    <div class="payment-method">
+        <h3>Select Payment Method:</h3>
+
+        <div class="payment-option">
+            <input type="radio" id="upi" name="paymentMethod" [(ngModel)]="selectedPaymentMethod" value="UPI">
+            <label for="upi">UPI</label>
+        </div>
+
+        <div class="payment-option">
+            <input type="radio" id="card" name="paymentMethod" [(ngModel)]="selectedPaymentMethod" value="Card">
+            <label for="card">Credit/ATM Card</label>
+        </div>
+    </div>
+
+    <div *ngIf="selectedPaymentMethod === 'UPI'" class="payment-details">
+        <h4>Enter UPI ID:</h4>
+        <input type="text" [(ngModel)]="upiId" placeholder="e.g., yourname@bank">
+        <button (click)="payNow()" [routerLink]="['/']">Pay Now</button>
+    </div>
+
+    <div *ngIf="selectedPaymentMethod === 'Card'" class="payment-details">
+        <h4>Enter Card Details:</h4>
+        <input type="text" [(ngModel)]="cardNumber" placeholder="Card Number">
+        <input type="text" [(ngModel)]="cardName" placeholder="Name on Card">
+        <input type="text" [(ngModel)]="expiryDate" placeholder="MM/YY">
+        <input type="text" [(ngModel)]="cvv" placeholder="CVV">
+        <button (click)="payNow()" [routerLink]="['/']">Pay Now</button>
+    </div>
+</div>
+</div>

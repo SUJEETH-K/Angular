@@ -8,7 +8,17 @@
         </p>
         <p class="product-price">Price: ₹{{ productPrice }}</p>
         <p class="product-rating" >Rating: {{ productRating }} / 5</p>
-        <button class="cta-btn">Buy Now</button>
+        <div class="quantity-control">
+            <button (click)="decrement()">-</button>
+            <span>{{quantity}}</span>
+            <button (click)="increment()">+</button>
+        </div>
+        <div class="total-price">
+            <p>Total Price:{{totalPrice}}</p>
+        </div>
+        <a [routerLink]="['/checkout']">
+            <button class="cta-btn">Buy Now</button>
+        </a>
     </div>
     <div class="hero-image">
         <img [src]="productImage" alt="Product Image">

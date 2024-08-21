@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../auth.service';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -82,19 +82,46 @@ export class ProductListComponent implements OnInit {
   products: any[] = [];
   filteredProducts: any[] = [];
   filter: string = 'all';
+  searchQuery: string = '';
 
-  constructor(private productService: AuthService) {}
+  constructor(private productService: AuthService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((data: any[]) => {
       this.products = data;
       this.filteredProducts = data;
     });
+
+    this.route.queryParams.subscribe(params => {
+    this.searchQuery = params['searchQuery'] ? params['searchQuery'].toLowerCase() : '';
+    this.loadProducts();
+    });
+  }
+
+  loadProducts(): void {
+    this.productService.getProducts().subscribe(
+      (data: any[]) => {
+        this.products = data;
+        this.applyFilterAndSearch();
+      },
+      err => console.error("Error in fetching the data", err)
+    );
   }
 
   onFilterChange(event: any): void {
     this.filter = event.target.value;
     this.applyFilter();
+  }
+
+  applyFilterAndSearch(): void {
+    let filtered = [...this.products];
+
+   
+    if (this.searchQuery) {
+      filtered = filtered.filter(product =>
+        product.title.toLowerCase().includes(this.searchQuery)
+      );
+    }
   }
 
   applyFilter(): void {

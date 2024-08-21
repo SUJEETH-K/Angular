@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ export const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'userDet', component: UserDetailsComponent },
   { path: 'product', component: ProductListComponent },
-  { path: 'payment', component:PaymentComponent},
+  { path: 'payment', component: PaymentComponent },
+  { path: 'checkout', component: CheckoutComponent},
   // { path: 'orders', component: OrdersComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
