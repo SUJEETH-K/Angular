@@ -46,3 +46,26 @@ export class AuthService {
     return this.http.get<any[]>(this.apiUrl);
   }
 }
+
+
+const first = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const value = true;
+    if (value) {
+      resolve('First');
+    }
+    else {
+      reject('First');
+    }
+  }, 1000);
+});
+
+first.then((value) => {
+  console.log(value);
+})
+.catch((error) => {
+    console.log(error);
+})
+  .finally(() => {
+    console.log('finsihed');
+})

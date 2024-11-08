@@ -9,7 +9,7 @@
                     *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
                     <small class="error" *ngIf="loginForm.get('email')?.hasError('required')">Email is required</small>
                     <small class="error" *ngIf="loginForm.get('email')?.hasError('email')">Invalid email</small>
-                </div>
+                </div> 
             </div>
 
             <div class="form-group">

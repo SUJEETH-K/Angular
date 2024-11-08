@@ -18,12 +18,11 @@ export const routes: Routes = [
   { path: 'product', component: ProductListComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'checkout', component: CheckoutComponent},
-  // { path: 'orders', component: OrdersComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)],//forRoot(routes) is a method that configures the router at the root level of the application 'routes' is the array of routes declaraed here 
+  exports: [RouterModule],//exporting RouterModule makes router directives available for use in the other components that will need them
 })
 export class AppRoutingModule {}
